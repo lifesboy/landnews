@@ -77,6 +77,7 @@ services:
       - 1080:80
       - 1443:443
     volumes:
+      - ./dat01/lsyncd.conf.lua:/etc/lsyncd/lsyncd.conf.lua
       - data01:/volumes/data01
       - data02:/volumes/data02
       - data03:/volumes/data03
