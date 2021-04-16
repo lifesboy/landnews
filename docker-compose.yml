@@ -72,7 +72,7 @@ services:
 
   dat01:
     image: lifesboy/landnews-data
-    container_name: dat
+    container_name: dat01
     ports:
       - 1080:80
       - 1443:443
