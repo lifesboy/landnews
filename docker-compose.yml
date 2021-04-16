@@ -76,10 +76,10 @@ services:
     ports:
       - 1080:80
       - 1043:443
-      volumes:
-        - data01:/data01
-        - data02:/data02
-        - data03:/data03
+    volumes:
+      - data01:/data01
+      - data02:/data02
+      - data03:/data03
     networks:
       - elastic
 
