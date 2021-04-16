@@ -17,7 +17,7 @@ services:
     volumes:
       - data01:/usr/share/elasticsearch/data
     ports:
-      - 9200:9200
+      - 19200:9200
     networks:
       - elastic
 
@@ -63,7 +63,7 @@ services:
     image: lifesboy/kibana:7.12.0-landnews
     container_name: kib01
     ports:
-      - 5601:5601
+      - 15601:5601
     environment:
       ELASTICSEARCH_URL: http://es01:9200
       ELASTICSEARCH_HOSTS: '["http://es01:9200","http://es02:9200","http://es03:9200"]'
@@ -75,7 +75,7 @@ services:
     container_name: dat
     ports:
       - 1080:80
-      - 1043:443
+      - 1443:443
     volumes:
       - data01:/data01
       - data02:/data02
