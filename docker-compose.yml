@@ -77,9 +77,9 @@ services:
       - 1080:80
       - 1443:443
     volumes:
-      - data01:/data01
-      - data02:/data02
-      - data03:/data03
+      - data01:/volumes/data01
+      - data02:/volumes/data02
+      - data03:/volumes/data03
     networks:
       - elastic
 
