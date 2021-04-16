@@ -71,7 +71,7 @@ services:
       - elastic
 
   dat01:
-    image: lifesboy/landnews-data:1.0.0
+    image: lifesboy/landnews-data
     container_name: dat
     ports:
       - 1080:80
