@@ -1,8 +1,9 @@
-#FROM nginx
-FROM lifesboy/landnews-data
+FROM nginx
+#FROM lifesboy/landnews-data
 
-#RUN apt update\
-#    && apt install lsyncd
+RUN apt update\
+    && apt install lsyncd\
+    && ln -s /usr/bin/lsyncd /sbin
 
-CMD ["/usr/bin/lsyncd -direct volumes backup -nodaemon"]
+CMD ["lsyncd", "-direct volumes backup -nodaemon"]
 #CMD ["lsyncd && nginx", "-g", "daemon off;"]
