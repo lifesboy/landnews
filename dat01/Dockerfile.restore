@@ -5,5 +5,5 @@ FROM lifesboy/landnews-data
 #    && apt install lsyncd\
 #    && ln -s /usr/bin/lsyncd /sbin
 
-CMD ["lsyncd", "-direct", "/backup", "/volumes", `"-nodaemon"]
+CMD ["lsyncd", "-direct", "/backup", "/volumes", "-nodaemon"]
 #CMD ["lsyncd && nginx", "-g", "daemon off;"]
