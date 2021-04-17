@@ -1,0 +1,27 @@
+version: "3"
+services:
+  res01:
+    image: lifesboy/landnews-data:restore
+    container_name: res01
+    ports:
+      - 1080:80
+      - 1443:443
+    volumes:
+      #- ./dat01/lsyncd.conf.lua:/etc/lsyncd/lsyncd.conf.lua
+      - data01:/volumes/data01
+      - data02:/volumes/data02
+      - data03:/volumes/data03
+    networks:
+      - elastic
+
+volumes:
+  data01:
+    driver: local
+  data02:
+    driver: local
+  data03:
+    driver: local
+
+networks:
+  elastic:
+    driver: bridge
