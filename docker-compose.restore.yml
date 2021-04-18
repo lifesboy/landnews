@@ -7,9 +7,8 @@ services:
     command: |
       /bin/bash -c "
         set -e
+        yes | cp -rfv /backup/* /volumes/
         chown -R 1000:root /volumes
-        lsyncd -rsync /backup /volumes -nodaemon
-        /bin/bash || exit 0
       "
     ports:
       - 2080:80
