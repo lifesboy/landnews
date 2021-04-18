@@ -41,7 +41,7 @@ services:
       - elastic
 
   es03:
-    image: lifesboy/elasticsearch:7.12.0-landnews-es3
+    image: lifesboy/elasticsearch:7.12.0-landnews
     container_name: es03
     environment:
       - node.name=es03
