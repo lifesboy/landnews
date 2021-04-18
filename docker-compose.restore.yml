@@ -7,6 +7,9 @@ services:
     command: |
       /bin/bash -c "
         set -e
+        rm -rf /volumes/data01/*
+        rm -rf /volumes/data02/*
+        rm -rf /volumes/data03/*
         yes | cp -rfv /backup/* /volumes/
         chown -R 1000:root /volumes
       "
