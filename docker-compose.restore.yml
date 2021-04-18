@@ -7,6 +7,7 @@ services:
     command: |
       /bin/bash -c "
         set -e
+        chrown -R 1000:root /volumes
         lsyncd -direct /backup /volumes -nodaemon
         /bin/bash || exit 0
       "
