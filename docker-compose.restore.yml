@@ -22,6 +22,19 @@ services:
     networks:
       - elastic
 
+  vol01:
+    image: nginx
+    container_name: vol01
+    ports:
+      - 3080:80
+      - 3443:443
+    volumes:
+      - data01:/volumes/data01
+      - data02:/volumes/data02
+      - data03:/volumes/data03
+    networks:
+      - elastic
+
 volumes:
   data01:
     driver: local
