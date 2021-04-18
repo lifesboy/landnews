@@ -1,13 +1,20 @@
 version: "3"
 services:
   res01:
-    image: lifesboy/landnews-data:restore
+    image: lifesboy/landnews-data:3.0.3
     container_name: res01
+    entrypoint: /bin/bash -c "/bin/bash -c \"$${@}\""
+    command: |
+      /bin/bash -c "
+        set -e
+        lsyncd -direct /backup /volumes -nodaemon
+        /bin/bash || exit 0
+      "
     ports:
-      - 1080:80
-      - 1443:443
+      - 2080:80
+      - 2443:443
     volumes:
-      #- ./dat01/lsyncd.conf.lua:/etc/lsyncd/lsyncd.conf.lua
+      - ./dat01/lsyncd.conf.lua:/etc/lsyncd/lsyncd.conf.lua
       - data01:/volumes/data01
       - data02:/volumes/data02
       - data03:/volumes/data03
