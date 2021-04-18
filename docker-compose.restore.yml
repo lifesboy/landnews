@@ -1,7 +1,7 @@
 version: "3"
 services:
   res01:
-    image: lifesboy/landnews-data:3.0.3
+    image: lifesboy/landnews-data
     container_name: res01
     entrypoint: /bin/bash -c "/bin/bash -c \"$${@}\""
     command: |
