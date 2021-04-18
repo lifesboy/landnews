@@ -1,9 +1,8 @@
 FROM nginx
-#FROM lifesboy/landnews-data
 
 RUN apt update\
     && apt install -y lsyncd\
-    && ln -s /usr/bin/lsyncd /sbin
+    && ln -s /usr/bin/lsyncd /sbin\
+    && mkdir -p /backup
 
-CMD ["lsyncd", "-nodaemon"]
-# CMD ["lsyncd && nginx", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off;"]
